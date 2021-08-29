@@ -1,3 +1,4 @@
 include_rules
 
-: foreach *.c |> $(CC) -I. $(FLAGS) -c %f -o %o |> %B.o
+: foreach *.c |> !cc |>
+: *.o |> !test |> test_base16
